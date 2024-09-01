@@ -10,7 +10,7 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({ label }) => {
         <button
             disabled={isSubmitting}
             type="submit"
-            className="text-lg text-white bg-primary-gradient font-semibold flex justify-center py-3 px-8 rounded-lg w-full hover:bg-primary-gradient-dark focus-ring-custom mt-10"
+            className="text-lg text-white bg-primary-gradient font-semibold flex justify-center py-3 px-8 rounded-lg w-full hover:bg-primary-gradient-dark outline-primary mt-14"
         >
             {label}
         </button>

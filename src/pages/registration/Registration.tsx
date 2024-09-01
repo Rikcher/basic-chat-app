@@ -1,10 +1,13 @@
 import AuthTitle from "../../components/ui/AuthTitle";
 import AuthSubtitle from "../../components/ui/AuthSubtitle";
 import CustomForm from "../../features/form/CustomForm";
+import useUser from "../../features/authentication/store";
 
 const Registration = () => {
+    console.log(useUser().user);
+
     return (
-        <div className="absolute bg-background rounded-lg right-[6%] top-1/2 -translate-y-1/2 flex flex-col text-black py-12 px-14 w-[40rem]">
+        <div className="absolute bg-background rounded-2xl right-[6%] top-1/2 -translate-y-1/2 flex flex-col text-black py-12 px-14 w-[40rem]">
             <AuthTitle label="Registration" />
             <AuthSubtitle
                 label="Already have and account? "
@@ -13,6 +16,12 @@ const Registration = () => {
             />
             <CustomForm
                 inputFields={[
+                    {
+                        name: "name",
+                        label: "Name",
+                        type: "text",
+                        required: true,
+                    },
                     {
                         name: "email",
                         label: "Email",
@@ -33,6 +42,7 @@ const Registration = () => {
                     },
                 ]}
                 submitButtonLabel="Register"
+                formType="registration"
             />
         </div>
     );

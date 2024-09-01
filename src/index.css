@@ -34,8 +34,3 @@ body {
     font-style: normal;
 }
 
-/* globals.css */
-.focus-ring-custom:focus {
-    @apply ring-2 ring-[#D524BA] outline-none;
-}
-

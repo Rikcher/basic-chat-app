@@ -3,11 +3,16 @@ import Home from "../pages/Home";
 import Login from "../pages/login/Login";
 import Registration from "../pages/registration/Registration";
 import SplineSceneBackgroundLayout from "../features/spline-scene-background/layouts/SplineSceneBackgroundLayout";
+import RequireAuth from "../features/authentication/components/RequireAuth";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Home />,
+        element: (
+            <RequireAuth>
+                <Home />
+            </RequireAuth>
+        ),
     },
     {
         path: "",

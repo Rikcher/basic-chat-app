@@ -10,6 +10,7 @@ export interface InputFieldProps {
 export interface CustomFormProps {
     inputFields: InputFieldProps[];
     submitButtonLabel: string
+    formType: "login" | "registration"
 }
 
 export interface ValidationRule {

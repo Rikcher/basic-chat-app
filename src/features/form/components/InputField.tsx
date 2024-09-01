@@ -20,7 +20,7 @@ const InputField: React.FC<InputFieldProps> = ({
     const validationRule = useInputValidation(name, required);
 
     return (
-        <div className="flex flex-col gap-2 mb-5">
+        <div className="flex flex-col gap-2 mb-7">
             <label className="font-medium" htmlFor={name}>
                 {label}
             </label>
@@ -29,7 +29,7 @@ const InputField: React.FC<InputFieldProps> = ({
                     id={name}
                     className={`rounded-md border border-solid ${
                         errors[name] ? "border-rose-600" : "border-black"
-                    } bg-transparent pl-4 pr-14 py-3 focus-ring-custom w-full`}
+                    } bg-transparent pl-4 pr-14 py-3 outline-primary w-full`}
                     {...(dontValidate
                         ? register(name)
                         : register(name, validationRule))}

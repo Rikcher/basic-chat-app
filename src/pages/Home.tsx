@@ -1,20 +1,19 @@
-import { Link } from "react-router-dom";
+import { useFirebaseAuth } from "../features/authentication/hooks/useFirebaseAuth";
+import useUser from "../features/authentication/store";
 
 const Home = () => {
+    const { logOut } = useFirebaseAuth();
+    const user = useUser().user;
+
+    const handleClick = () => {
+        logOut();
+    };
+
     return (
         <div>
-            <h1>HOME</h1>
-            <ul>
-                <li>
-                    <Link to="/login">Login</Link>
-                </li>
-                <li>
-                    <Link to="/registration">REgister</Link>
-                </li>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
+            {user?.displayName}
+            <h1 className="text-black text-3xl font-bold">HOME</h1>
+            <button onClick={handleClick}>CLICK HERE TO LOG OUT</button>
         </div>
     );
 };

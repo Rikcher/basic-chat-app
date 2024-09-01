@@ -16,7 +16,7 @@ const AuthSubtitle: React.FC<AuthSubtitleProps> = ({
             {label}
             <Link
                 to={path}
-                className="text-primary hover:underline focus-ring-custom"
+                className="text-primary hover:underline outline-primary"
             >
                 {linkLabel}
             </Link>
