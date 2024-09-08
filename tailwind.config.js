@@ -6,7 +6,9 @@ export default {
       colors: {
         'primary': '#D524BA',
         'primary-dark': '#B01F9A',
-        'background': '#E9EEF5'
+        'background': '#E9EEF5',
+        'background-dark': '#232326',
+        'background-light': '#3E3E44'
       },
       backgroundImage: {
         'background-gradient': "linear-gradient(90deg, rgba(16,16,17,1) 0%, rgba(35,35,38,1) 85%)",

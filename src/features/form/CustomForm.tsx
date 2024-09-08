@@ -16,10 +16,10 @@ const CustomForm: React.FC<CustomFormProps> = ({
     const onSubmit = async (data: FieldValues) => {
         switch (formType) {
             case "login":
-                loginExistingUser(data);
+                await loginExistingUser(data);
                 break;
             case "registration":
-                registerNewUser(data);
+                await registerNewUser(data);
                 break;
         }
     };
@@ -32,8 +32,8 @@ const CustomForm: React.FC<CustomFormProps> = ({
                     <InputField key={index} {...inputField} />
                 ))}
                 <SubmitButton label={submitButtonLabel} />
-                <LogInWithGoogleButton />
             </form>
+            <LogInWithGoogleButton />
         </FormProvider>
     );
 };

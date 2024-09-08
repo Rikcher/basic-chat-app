@@ -4,6 +4,8 @@ import { FieldValues } from "react-hook-form";
 import { useState, useEffect } from 'react';
 import useUser from "../store";
 import { useNavigate } from "react-router-dom";
+import { db } from "../../../firebase";
+import { ref, set } from "firebase/database";
 
 
 export const useFirebaseAuth = () => {
@@ -16,6 +18,12 @@ export const useFirebaseAuth = () => {
             const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
             const user = userCredential.user;
             await updateProfile(user, { displayName: data.name });
+            await set(ref(db, "users/" + user.uid), {
+                uid: user.uid,
+                displayName: user.displayName,
+                email: user.email,
+                photoURL: "",
+            })
             navigate("/");
             setError(null);
         } catch (error: any) {
